@@ -33,14 +33,7 @@ public class DireccionServiceImp implements IDireccionService{
 
 	@Override
 	public void editarBD(Direccion clase) {
-		// TODO Auto-generated method stub
-		if(irepo.findById(clase.getId()) != null) {
-			System.out.print(".-----" + irepo.findById(clase.getId()).get().getNombre());
-			irepo.editarDireccion(clase.getNombre(), clase.getId());
-		}
-		else {
-			throw new ObjectNotFoundExceptionHandler("este id no existe en la tabla direccion");
-		}		
+	
 	}
 
 	@Override
@@ -57,21 +50,6 @@ public class DireccionServiceImp implements IDireccionService{
 
 	@Override
 	public void editarSave(Direccion direccion) {
-		// TODO Auto-generated method stub
 		
-		if(irepo.findById(direccion.getId()).get() != null) {			
-			if(irepo.findByEditorial_Id(direccion.getEditorial().getId()) != null) {
-				irepo.save(direccion);
-			}
-			else {
-				throw new ObjectNotFoundExceptionHandler("esta editorial no existe en la base de datos");
-			}
-		}
-		else {
-			throw new ObjectNotFoundExceptionHandler("esta direccion no existe en la base de datos");			
-		}
 	}
-	
-	
-
 }

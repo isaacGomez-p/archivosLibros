@@ -34,8 +34,7 @@ public class ConsultaView implements Serializable{
 	private String direccion;
 	
 	@Column(name = "numlibros")
-	private Integer numlibros;
-	
+	private Integer numlibros;	
 	
 	
 	public Integer getNumlibros() {
